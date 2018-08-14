@@ -1,0 +1,469 @@
+{
+    "Time": "2016.07.30 05:58:11 AM",
+    "Food": "fries",
+    "Nutrients": {
+        "1Value per 100 g": {
+            "Water": {
+                "val": "69.29",
+                "unit": "g"
+            },
+            "Energy": {
+                "val": "133",
+                "unit": "kcal"
+            },
+            "Protein": {
+                "val": "2.19",
+                "unit": "g"
+            },
+            "Total lipid (fat)": {
+                "val": "3.39",
+                "unit": "g"
+            },
+            "Carbohydrate, by difference": {
+                "val": "23.51",
+                "unit": "g"
+            },
+            "Fiber, total dietary": {
+                "val": "1.9",
+                "unit": "g"
+            },
+            "Sugars, total": {
+                "val": "0.20",
+                "unit": "g"
+            },
+            "Calcium, Ca": {
+                "val": "9",
+                "unit": "mg"
+            },
+            "Iron, Fe": {
+                "val": "0.65",
+                "unit": "mg"
+            },
+            "Magnesium, Mg": {
+                "val": "21",
+                "unit": "mg"
+            },
+            "Phosphorus, P": {
+                "val": "78",
+                "unit": "mg"
+            },
+            "Potassium, K": {
+                "val": "400",
+                "unit": "mg"
+            },
+            "Sodium, Na": {
+                "val": "317",
+                "unit": "mg"
+            },
+            "Zinc, Zn": {
+                "val": "0.36",
+                "unit": "mg"
+            },
+            "Vitamin C, total ascorbic acid": {
+                "val": "18.4",
+                "unit": "mg"
+            },
+            "Thiamin": {
+                "val": "0.098",
+                "unit": "mg"
+            },
+            "Riboflavin": {
+                "val": "0.072",
+                "unit": "mg"
+            },
+            "Niacin": {
+                "val": "2.005",
+                "unit": "mg"
+            },
+            "Vitamin B-6": {
+                "val": "0.168",
+                "unit": "mg"
+            },
+            "Vitamin B-12": {
+                "val": "0.00",
+                "unit": null
+            },
+            "Vitamin A, RAE": {
+                "val": "0",
+                "unit": null
+            },
+            "Vitamin A, IU": {
+                "val": "4",
+                "unit": "IU"
+            },
+            "Vitamin E (alpha-tocopherol)": {
+                "val": "0.08",
+                "unit": "mg"
+            },
+            "Vitamin D (D2 + D3)": {
+                "val": "0.0",
+                "unit": null
+            },
+            "Vitamin D": {
+                "val": "0",
+                "unit": "IU"
+            },
+            "Vitamin K (phylloquinone)": {
+                "val": "1.8",
+                "unit": null
+            },
+            "Fatty acids, total saturated": {
+                "val": "0.688",
+                "unit": "g"
+            },
+            "Fatty acids, total monounsaturated": {
+                "val": "2.025",
+                "unit": "g"
+            },
+            "Fatty acids, total polyunsaturated": {
+                "val": "0.218",
+                "unit": "g"
+            },
+            "Cholesterol": {
+                "val": "0",
+                "unit": "mg"
+            },
+            "Caffeine": {
+                "val": "0",
+                "unit": "mg"
+            }
+        },
+        "10.0 strip = 153.0g": {
+            "Water": {
+                "val": "106.01",
+                "unit": "g"
+            },
+            "Energy": {
+                "val": "203",
+                "unit": "kcal"
+            },
+            "Protein": {
+                "val": "3.35",
+                "unit": "g"
+            },
+            "Total lipid (fat)": {
+                "val": "5.19",
+                "unit": "g"
+            },
+            "Carbohydrate, by difference": {
+                "val": "35.97",
+                "unit": "g"
+            },
+            "Fiber, total dietary": {
+                "val": "2.9",
+                "unit": "g"
+            },
+            "Sugars, total": {
+                "val": "0.31",
+                "unit": "g"
+            },
+            "Calcium, Ca": {
+                "val": "14",
+                "unit": "mg"
+            },
+            "Iron, Fe": {
+                "val": "0.99",
+                "unit": "mg"
+            },
+            "Magnesium, Mg": {
+                "val": "32",
+                "unit": "mg"
+            },
+            "Phosphorus, P": {
+                "val": "119",
+                "unit": "mg"
+            },
+            "Potassium, K": {
+                "val": "612",
+                "unit": "mg"
+            },
+            "Sodium, Na": {
+                "val": "485",
+                "unit": "mg"
+            },
+            "Zinc, Zn": {
+                "val": "0.55",
+                "unit": "mg"
+            },
+            "Vitamin C, total ascorbic acid": {
+                "val": "28.2",
+                "unit": "mg"
+            },
+            "Thiamin": {
+                "val": "0.150",
+                "unit": "mg"
+            },
+            "Riboflavin": {
+                "val": "0.110",
+                "unit": "mg"
+            },
+            "Niacin": {
+                "val": "3.068",
+                "unit": "mg"
+            },
+            "Vitamin B-6": {
+                "val": "0.257",
+                "unit": "mg"
+            },
+            "Vitamin B-12": {
+                "val": "0.00",
+                "unit": null
+            },
+            "Vitamin A, RAE": {
+                "val": "0",
+                "unit": null
+            },
+            "Vitamin A, IU": {
+                "val": "6",
+                "unit": "IU"
+            },
+            "Vitamin E (alpha-tocopherol)": {
+                "val": "0.12",
+                "unit": "mg"
+            },
+            "Vitamin D (D2 + D3)": {
+                "val": "0.0",
+                "unit": null
+            },
+            "Vitamin D": {
+                "val": "0",
+                "unit": "IU"
+            },
+            "Vitamin K (phylloquinone)": {
+                "val": "2.8",
+                "unit": null
+            },
+            "Fatty acids, total saturated": {
+                "val": "1.053",
+                "unit": "g"
+            },
+            "Fatty acids, total monounsaturated": {
+                "val": "3.098",
+                "unit": "g"
+            },
+            "Fatty acids, total polyunsaturated": {
+                "val": "0.334",
+                "unit": "g"
+            },
+            "Cholesterol": {
+                "val": "0",
+                "unit": "mg"
+            },
+            "Caffeine": {
+                "val": "0",
+                "unit": "mg"
+            }
+        }
+    }
+}
+
+{
+    "Time": "2016.07.30 05:55:51 AM",
+    "Food": "hamburger",
+    "Nutrients": {
+        "1Value per 100 g": {
+            "Water": {
+                "val": "44.53",
+                "unit": "g"
+            },
+            "Energy": {
+                "val": "264",
+                "unit": "kcal"
+            },
+            "Protein": {
+                "val": "12.92",
+                "unit": "g"
+            },
+            "Total lipid (fat)": {
+                "val": "10.09",
+                "unit": "g"
+            },
+            "Carbohydrate, by difference": {
+                "val": "30.28",
+                "unit": "g"
+            },
+            "Fiber, total dietary": {
+                "val": "1.3",
+                "unit": "g"
+            },
+            "Sugars, total": {
+                "val": "6.03",
+                "unit": "g"
+            },
+            "Calcium, Ca": {
+                "val": "127",
+                "unit": "mg"
+            },
+            "Iron, Fe": {
+                "val": "2.87",
+                "unit": "mg"
+            },
+            "Magnesium, Mg": {
+                "val": "21",
+                "unit": "mg"
+            },
+            "Phosphorus, P": {
+                "val": "107",
+                "unit": "mg"
+            },
+            "Potassium, K": {
+                "val": "192",
+                "unit": "mg"
+            },
+            "Sodium, Na": {
+                "val": "494",
+                "unit": "mg"
+            },
+            "Zinc, Zn": {
+                "val": "1.95",
+                "unit": "mg"
+            },
+            "Vitamin C, total ascorbic acid": {
+                "val": "0.6",
+                "unit": "mg"
+            },
+            "Thiamin": {
+                "val": "0.247",
+                "unit": "mg"
+            },
+            "Riboflavin": {
+                "val": "0.239",
+                "unit": "mg"
+            },
+            "Niacin": {
+                "val": "4.544",
+                "unit": "mg"
+            },
+            "Vitamin B-12": {
+                "val": "0.83",
+                "unit": null
+            },
+            "Vitamin A, IU": {
+                "val": "55",
+                "unit": "IU"
+            },
+            "Fatty acids, total saturated": {
+                "val": "3.504",
+                "unit": "g"
+            },
+            "Fatty acids, total monounsaturated": {
+                "val": "3.768",
+                "unit": "g"
+            },
+            "Fatty acids, total polyunsaturated": {
+                "val": "1.420",
+                "unit": "g"
+            },
+            "Fatty acids, total trans": {
+                "val": "0.428",
+                "unit": "g"
+            },
+            "Cholesterol": {
+                "val": "27",
+                "unit": "mg"
+            }
+        },
+        "1 sandwich = 95.0g": {
+            "Water": {
+                "val": "42.30",
+                "unit": "g"
+            },
+            "Energy": {
+                "val": "251",
+                "unit": "kcal"
+            },
+            "Protein": {
+                "val": "12.27",
+                "unit": "g"
+            },
+            "Total lipid (fat)": {
+                "val": "9.59",
+                "unit": "g"
+            },
+            "Carbohydrate, by difference": {
+                "val": "28.77",
+                "unit": "g"
+            },
+            "Fiber, total dietary": {
+                "val": "1.2",
+                "unit": "g"
+            },
+            "Sugars, total": {
+                "val": "5.73",
+                "unit": "g"
+            },
+            "Calcium, Ca": {
+                "val": "121",
+                "unit": "mg"
+            },
+            "Iron, Fe": {
+                "val": "2.73",
+                "unit": "mg"
+            },
+            "Magnesium, Mg": {
+                "val": "20",
+                "unit": "mg"
+            },
+            "Phosphorus, P": {
+                "val": "102",
+                "unit": "mg"
+            },
+            "Potassium, K": {
+                "val": "182",
+                "unit": "mg"
+            },
+            "Sodium, Na": {
+                "val": "469",
+                "unit": "mg"
+            },
+            "Zinc, Zn": {
+                "val": "1.85",
+                "unit": "mg"
+            },
+            "Vitamin C, total ascorbic acid": {
+                "val": "0.6",
+                "unit": "mg"
+            },
+            "Thiamin": {
+                "val": "0.235",
+                "unit": "mg"
+            },
+            "Riboflavin": {
+                "val": "0.227",
+                "unit": "mg"
+            },
+            "Niacin": {
+                "val": "4.317",
+                "unit": "mg"
+            },
+            "Vitamin B-12": {
+                "val": "0.79",
+                "unit": null
+            },
+            "Vitamin A, IU": {
+                "val": "52",
+                "unit": "IU"
+            },
+            "Fatty acids, total saturated": {
+                "val": "3.329",
+                "unit": "g"
+            },
+            "Fatty acids, total monounsaturated": {
+                "val": "3.580",
+                "unit": "g"
+            },
+            "Fatty acids, total polyunsaturated": {
+                "val": "1.349",
+                "unit": "g"
+            },
+            "Fatty acids, total trans": {
+                "val": "0.407",
+                "unit": "g"
+            },
+            "Cholesterol": {
+                "val": "26",
+                "unit": "mg"
+            }
+        }
+    }
+}

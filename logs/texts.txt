@@ -1,0 +1,4 @@
+So, I have been pinged...So, I have been pinged...00Ping: 
+19544453119195444531197Ping:7
+Ping:19544453119 | 12015100624 | 0B000000B8F91242 | What? | text | WHAT? | 2018-02-21 08:13:33
+Ping:{"msisdn":"19544453119","to":"12015100624","messageId":"0B000000B8F91AA8","text":"HYFR","type":"text","keyword":"HYFR","message-timestamp":"2018-02-21 08:14:10"}

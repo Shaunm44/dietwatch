@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DietWatch</title>
+</head>
+<body>
+	<?php
+		error_reporting(E_ERROR | E_PARSE);
+
+		$params = $_GET;
+		$foodSearch = array_shift($params);
+		if(!$foodSearch) {
+			$foodSearch = "hamburger";
+		}
+
+		$searchUrl = "https://ndb.nal.usda.gov/ndb/foods?qlookup=" . urlencode($foodSearch);
+		$searchHtml = file_get_contents($searchUrl);
+
+		$searchPage = new DOMDocument();
+		$searchPage->loadHTML($searchHtml);
+
+		$tables = $searchPage->getElementsByTagName("table");
+
+		// Get the first data point from the second table
+		$firstRes = $tables->item(1)->getElementsByTagName("td")->item(0)->firstChild;
+
+		// Parse path for the UID
+		$tempPath = $firstRes->getAttribute("href");
+		$UID = preg_replace("/.*show\//", "", $tempPath);
+		$UID = preg_replace("/\?.*/", "", $UID);
+
+		// CSV Link
+		$nutrientsCsvUrl = "https://ndb.nal.usda.gov/ndb/foods/show/" . $UID . "?format=Abridged&reportfmt=csv";
+
+		// Print page and CSV links
+		echo "<a href=\"https://ndb.nal.usda.gov" . $tempPath . "\">" . $foodSearch . "</a>";
+		echo "<br>";
+		echo "<a href=\"" . $nutrientsCsvUrl . "\">" . $foodSearch . " CSV download</a>";
+
+		$nutrientsCsv = fopen($nutrientsCsvUrl, "r");
+
+		/*
+			After getting the CSV, select the serving size data from Column C - C is constantly there in all files
+		*/
+
+		// Ensure file is available
+		if($nutrientsCsv) {
+			$i = 1;
+			$getData = false; // Don't store values until getting to the servings line
+			$nutrients = [];
+			while(($currLine = fgetcsv($nutrientsCsv)) !== false) {
+				// echo $i . " ";
+				// var_dump($currLine);
+				// echo "<br>";
+				$i++;
+
+				// Check if at the servings line
+				if(false === $getData) {
+					if("Nutrient" === $currLine[0]) {
+						$getData = true;
+
+						$svLabels = [];
+						// Get all serving size labels
+						for($idx=2; $idx < count($currLine); $idx++) {
+							if($currLine[$idx] !== "") {
+								$svLabels[$idx] = $currLine[$idx];
+								$nutrients[$svLabels[$idx]] = [];
+							}
+						}
+					}
+				}
+				// Otherwise, keep collecting data
+				else {
+					$ntrnt = $currLine[0];
+					$unit = $currLine[1];
+
+
+					// Get all nutrient data
+					for($idx=2; $idx < count($currLine); $idx++) {
+						$nutrients[$svLabels[$idx]][$ntrnt] = [];
+						$nutrients[$svLabels[$idx]][$ntrnt]["val"] = $currLine[$idx];
+						$nutrients[$svLabels[$idx]][$ntrnt]["unit"] = $unit;
+					}
+				}
+
+				/*
+					{
+						"100g": {
+							"Water":
+						}
+					},
+					{...}
+				*/
+			}
+			echo "<br>";
+			echo "<br>";
+			echo json_encode($nutrients, JSON_PRETTY_PRINT);
+		}
+
+		// Log the info of URL post and the time it happened
+		$logData["Time"] = date('Y.m.d h:i:s A');
+		$logData["Food"] = $foodSearch;
+		$logData["Nutrients"] = $nutrients;
+
+		$file = './log.txt';
+
+		$fileContents = file_get_contents($file);
+
+		file_put_contents($file, json_encode($logData, JSON_PRETTY_PRINT) . "\n\n" . $fileContents);
+	?>
+
+</body>
+</html>

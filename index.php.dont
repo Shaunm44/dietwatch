@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DietWatch</title>
+</head>
+<body>
+	<?php
+		error_reporting(E_ERROR | E_PARSE);
+
+		$params = $_GET;
+		$foodSearch = array_shift($params);
+		if(!$foodSearch) {
+			$foodSearch = "hamburger";
+		}
+
+		$searchUrl = "https://ndb.nal.usda.gov/ndb/foods?qlookup=" . urlencode($foodSearch);
+		$searchHtml = file_get_contents($searchUrl);
+
+		$searchPage = new DOMDocument();
+		$searchPage->loadHTML($searchHtml);
+
+		$tables = $searchPage->getElementsByTagName("table");
+
+		// Get the first data point from the second table
+		$firstRes = $tables->item(1)->getElementsByTagName("td")->item(0)->firstChild;
+
+		// Parse path for the UID
+		$tempPath = $firstRes->getAttribute("href");
+		$tempPath = preg_replace("/.*show\//", "", $tempPath);
+		$UID = preg_replace("/\?.*/", "", $tempPath);
+
+		// Download CSV
+		$nutrientsCsvUrl = "https://ndb.nal.usda.gov/ndb/foods/show/" . $UID . "?format=Abridged&reportfmt=csv";
+		echo "<a href=\"" . $nutrientsCsvUrl . "\">" . $foodSearch . "</a>";
+
+		$nutrientsCsv = fopen($nutrientsCsvUrl, "r");
+
+		/*
+			After getting the CSV, select the serving size data from Column C - C is constantly there in all files
+		*/
+
+		// Ensure file is available
+		if($nutrientsCsv) {
+			$i = 1;
+			$getData = false; // Don't store values until getting to the servings line
+			while(($currLine = fgetcsv($nutrientsCsv)) !== false) {
+				// echo $i . " ";
+				// var_dump($currLine);
+				// echo "<br>";
+				$i++;
+
+				// Check if at the servings line
+				if(false === $getData) {
+					if("Nutrient" === $currLine[0]) {
+						echo "<br>";
+						echo "<br>";
+						var_dump($currLine);
+						echo "<br>";
+						echo $currLine.count();
+						$getData = true;
+
+						$servings = [];
+						// Get all serving size data
+						for($idx=2; $idx < $currLine.count(); $idx++) {
+							$servings[$idx] = $currLine[$idx];
+						}
+						var_dump($servings);
+					}
+				}
+				// Otherwise, keep collecting data
+				else {
+
+				}
+			}
+		}
+
+	?>
+
+</body>
+</html>

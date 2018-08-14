@@ -1,0 +1,16 @@
+{
+  "transport": "ftp",
+  "hostname": "shaunmosley.com",
+  "port": "21",
+  "username": "diet@shaunmosley.com",
+  "password": "Watch your food!",
+  "target": "/",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "watch": []
+}
