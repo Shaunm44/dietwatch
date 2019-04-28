@@ -156,9 +156,23 @@
 				$GLOBALS['searchUrl']
 			);
 
-			$logFile = fopen('logs/searches.csv', 'a');
-			fputcsv($logFile, $fields);
-			fclose($logFile);
+			// Fire IFTTT logDiet webhook event
+			$url = 'https://maker.ifttt.com/trigger/logDiet/with/key/ceIutD1UvWmPMcJ2SBNAgQ';
+		  $data = array('value1' => $food, 'value2' => $dbFoodName, 'value3' => $GLOBALS['searchUrl']);
+
+		  $options = array(
+		      'http' => array(
+		          'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+		          'method'  => 'POST',
+		          'content' => http_build_query($data)
+		      )
+		  );
+
+		  $context  = stream_context_create($options);
+		  $result = file_get_contents($url, false, $context);
+		  if ($result === FALSE) {
+		    /* Handle error */
+		  }
 		}
 
 		// Send food to be added to journal log
