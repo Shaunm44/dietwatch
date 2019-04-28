@@ -182,7 +182,10 @@
 
 			logSearches($food, $dbFoodName, $ndbno);
 
+
+			/*  Disabling because it's no longer needed with the logDiet webhook
 			sendToIfttt($GLOBALS['from'], $food, $cal, $dbFoodName);
+			*/
 		}
 	?>
 
