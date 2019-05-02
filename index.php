@@ -148,21 +148,11 @@
 			// - USDA database number
 			// - Search url
 
-			$fields = array(
-				time(),
-				$food,
-				$dbFoodName,
-				$ndbno,
-				$GLOBALS['searchUrl']
-			);
-
 			// Fire IFTTT logDiet webhook event
 			$url = 'https://maker.ifttt.com/trigger/logDiet/with/key/ceIutD1UvWmPMcJ2SBNAgQ';
-		  $data = array('entry' => $food,
-				'dbName' => $dbFoodName,
-				'calories' => $cal,
-				'carbohydrates' => $carb,
-				'dbURL' => $GLOBALS['searchUrl']);
+		  $data = array('value1' => $food,
+				'value2' => $cal,
+				'value3' => $GLOBALS['searchUrl']);
 
 		  $options = array(
 		      'http' => array(
