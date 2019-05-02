@@ -140,7 +140,7 @@
 		}
 
 		// Keep track of what food was requested and what the search returned
-		function logSearches($food, $dbFoodName, $ndbno) {
+		function logSearches($food, $dbFoodName, $ndbno, $cal, $carb) {
 			// Fields
 			// - Timestamp
 			// - Food name from user's text
@@ -158,7 +158,11 @@
 
 			// Fire IFTTT logDiet webhook event
 			$url = 'https://maker.ifttt.com/trigger/logDiet/with/key/ceIutD1UvWmPMcJ2SBNAgQ';
-		  $data = array('value1' => $food, 'value2' => $dbFoodName, 'value3' => $GLOBALS['searchUrl']);
+		  $data = array('entry' => $food,
+				'dbName' => $dbFoodName,
+				'calories' => $cal,
+				'carbohydrates' => $carb,
+				'dbURL' => $GLOBALS['searchUrl']);
 
 		  $options = array(
 		      'http' => array(
@@ -180,7 +184,7 @@
 		// Note: Uploading entry to journal adds to searchLog automatically
 		function uploadFoodEntry($food, $cal=0, $carb=0, $dbFoodName='', $ndbno='') {
 
-			logSearches($food, $dbFoodName, $ndbno);
+			logSearches($food, $dbFoodName, $ndbno, $cal, $carb);
 
 
 			/*  Disabling because it's no longer needed with the logDiet webhook
